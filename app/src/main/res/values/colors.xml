@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 页面颜色-->
+    <!-- 最强调的颜色-->
+    <color name="major_color">#7186c7</color>
+    <color name="major_inverse_color">#ffffff</color>
+    <!-- 次强调的颜色-->
+    <color name="secondary_color">#9ca9cb</color>
+    <!-- 再次级的颜色-->
+    <color name="third_color">#c0c9df</color>
+    <!-- 弱装饰的颜色-->
+    <color name="week_color">#f1f4fc</color>
+    <!-- 视觉最广的颜色，一般作为背景色-->
+    <color name="widest_color">#FFFFFF</color>
+    <!--警告的颜色-->
+    <color name="colorWarn">#f15b6c</color>
+    <!-- 死亡的颜色-->
+    <color name="dead_color">#AAAAAA</color>
+    <!-- 背景颜色-->
+    <color name="main_bg">@color/widest_color</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">@color/major_color</color>
+
+
+    <!-- 按钮颜色 -->
+    <color name="button_normal_color">@color/third_color</color>
+    <color name="button_pressed_color">@color/major_color</color>
+    <color name="button_disable_color">@color/dead_color</color>
+
+    <!-- 文本颜色 -->
+    <color name="text_normal_color">@color/third_color</color>
+    <color name="text_pressed_color">@color/major_color</color>
+    <color name="text_disable_color">@color/dead_color</color>
+    <color name="text_primary_color">@color/major_color</color>
+    <color name="text_secondary_color">@color/secondary_color</color>
+    <color name="text_third_color">@color/third_color</color>
+    <color name="label_color">@color/secondary_color</color>
+
+    <!-- 菜单项颜色 -->
+    <color name="white_inverse_color">#D9D9D9</color>
+    <color name="item_normal_color">@color/week_color</color>
+    <color name="item_pressed_color">@color/secondary_color</color>
+
+    <!-- 阴影-->
+    <color name="view_shadow_color">#000000</color>
+    <color name="text_shadow_color">#B8B8B8</color>
+    <!-- 间隔线-->
+    <color name="line_color">#E7E7E7</color>
+
+    <color name="device_color_1">#fe4365</color>
+    <color name="device_color_2">#fc9d9a</color>
+    <color name="device_color_3">#f969ad</color>
+    <color name="device_color_4">#c8c8a9</color>
+    <color name="device_color_5">#83af9b</color>
+
+
+</resources>

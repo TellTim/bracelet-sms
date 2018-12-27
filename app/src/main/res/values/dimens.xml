@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="label_primary_size">20sp</dimen>
+
+    <dimen name="navigation_text_size">11sp</dimen>
+    <dimen name="navigation_tip_text_size">10sp</dimen>
+
+    <dimen name="option_item_margin_top">10dp</dimen>
+    <dimen name="option_item_margin_left">40dp</dimen>
+</resources>
