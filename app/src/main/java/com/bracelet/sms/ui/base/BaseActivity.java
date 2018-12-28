@@ -72,9 +72,8 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
 
         //沉浸式状态栏
         //StatusBarUtil.setColor(this, UIUtils.getColor(R.color.colorPrimaryDark), 10);
-
-        initView();
         initData();
+        initView();
         initListener();
     }
 

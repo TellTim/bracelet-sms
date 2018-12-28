@@ -5,15 +5,12 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 
 import com.bracelet.sms.R;
-import com.bracelet.sms.ui.adapter.Note;
 import com.bracelet.sms.ui.adapter.RecyclerSwipeViewAdapter;
 import com.bracelet.sms.ui.base.BaseActivity;
 import com.bracelet.sms.ui.base.BasePresenter;
 import com.lqr.recyclerview.LQRRecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 import butterknife.BindView;
 
@@ -28,14 +25,7 @@ public class ConversationActivity extends BaseActivity {
     private String braceletName;
     private String braceletTelephne;
 
-    private Note[] notes = {new Note("标题1", "内容：4545454545454", "摘要：5555", "2017-5-23 15:22"), new Note("标题1", "内容：4545454545454", "摘要：5555", "2017-5-23"),
-            new Note("标题1", "内容：4545454545454", "摘要：5555", "2017-5-23"), new Note("标题1", "内容：4545454545454", "摘要：5555", "2017-5-23"),
-            new Note("标题1", "内容：4545454545454", "摘要：5555", "2017-5-23"), new Note("标题1", "内容：4545454545454", "摘要：5555", "2017-5-23"),
-            new Note("标题1", "内容：4545454545454", "摘要：5555", "2017-5-23"), new Note("标题1", "内容：4545454545454", "摘要：5555", "2017-5-23"),
-            new Note("标题1", "内容：4545454545454", "摘要：5555", "2017-5-23"), new Note("标题1", "内容：4545454545454", "摘要：5555", "2017-5-23")};
-
-    private List<Note> noteList = new ArrayList<>();
-
+    private ArrayList<String> cmdList;
     private RecyclerSwipeViewAdapter myRecyclerViewAdapter;
 
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -55,8 +45,7 @@ public class ConversationActivity extends BaseActivity {
 
         GridLayoutManager layoutManager = new GridLayoutManager(this, 1);
         mRVConversationList.setLayoutManager(layoutManager);
-
-        myRecyclerViewAdapter = new RecyclerSwipeViewAdapter(this, noteList);
+        myRecyclerViewAdapter = new RecyclerSwipeViewAdapter(this, cmdList);
         mRVConversationList.setAdapter(myRecyclerViewAdapter);
 
     }
@@ -65,11 +54,11 @@ public class ConversationActivity extends BaseActivity {
     protected void initData() {
         super.initData();
 
-        noteList.clear();
-        for (int i = 0; i < 20; i++) {
-            Random rand = new Random();
-            int index = rand.nextInt(notes.length);
-            noteList.add(notes[index]);
+        if (cmdList == null) {
+            cmdList = new ArrayList<>();
+        }
+        for (int i = 0; i < 6; i++) {
+            cmdList.add(braceletTelephne);
         }
 
     }
