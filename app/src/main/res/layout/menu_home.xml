@@ -38,7 +38,7 @@
             android:drawablePadding="12dp"
             android:gravity="center_vertical"
             android:paddingStart="19dp"
-            android:text="@string/str_add_device"
+            android:text="@string/str_add_bracelet"
             android:textColor="@color/white"
             android:textSize="14sp" />
 

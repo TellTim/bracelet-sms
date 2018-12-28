@@ -3,13 +3,15 @@
     <string name="app_name">手环通</string>
     <string name="str_send">发送</string>
     <string name="str_cancel">取消</string>
-    <string name="str_device_title">您的手环</string>
-    <string name="str_device">手环</string>
+    <string name="str_bracelet_title">您的手环</string>
+    <string name="str_bracelet">手环</string>
     <string name="str_conversation">会话</string>
     <string name="str_setting">设置</string>
-    <string name="str_add_device">绑定手环</string>
+    <string name="str_add_bracelet">绑定手环</string>
     <string name="str_add_conversation">开始会话</string>
     <string name="parameter_error">输入的参数有误</string>
     <string name="binding_success">绑定成功!</string>
     <string name="count_of_bracelets">您已绑定%1$d 个手环</string>
+    <string name="str_index">%1$d.</string>
+  <string name="str_send_ask">确定发送么?</string>
 </resources>

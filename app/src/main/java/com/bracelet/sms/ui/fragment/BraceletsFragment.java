@@ -13,17 +13,18 @@ import com.bracelet.sms.app.action.AppAction;
 import com.bracelet.sms.app.manager.BroadcastManager;
 import com.bracelet.sms.ui.activity.HomeActivity;
 import com.bracelet.sms.ui.base.BaseFragment;
-import com.bracelet.sms.ui.presenter.DevicesFgPresenter;
-import com.bracelet.sms.ui.presenter.view.IDevicesFgView;
+import com.bracelet.sms.ui.presenter.BraceletsFgPresenter;
+import com.bracelet.sms.ui.presenter.view.IBraceletsFgView;
 import com.bracelet.sms.ui.utils.UIUtils;
 import com.lqr.recyclerview.LQRRecyclerView;
 
 import butterknife.BindView;
 
-public class DevicesFragment extends BaseFragment<IDevicesFgView, DevicesFgPresenter> implements IDevicesFgView {
+public class BraceletsFragment extends BaseFragment<IBraceletsFgView, BraceletsFgPresenter> implements
+    IBraceletsFgView {
 
-    @BindView(R.id.rvDevices)
-    LQRRecyclerView mRvDevices;
+    @BindView(R.id.rvBracelets)
+    LQRRecyclerView mRvBracelets;
     private TextView mFooterView;
 
     @Override
@@ -39,17 +40,17 @@ public class DevicesFragment extends BaseFragment<IDevicesFgView, DevicesFgPrese
     @Override
     protected void initData() {
         super.initData();
-        mPresenter.loadDeviceList();
+        mPresenter.loadBraceletList();
     }
 
     @Override
-    protected DevicesFgPresenter createPresenter() {
-        return new DevicesFgPresenter((HomeActivity) getActivity());
+    protected BraceletsFgPresenter createPresenter() {
+        return new BraceletsFgPresenter((HomeActivity) getActivity());
     }
 
     @Override
     protected int provideContentViewId() {
-        return R.layout.fragment_devices;
+        return R.layout.fragment_bracelets;
     }
 
     @Override
@@ -59,7 +60,7 @@ public class DevicesFragment extends BaseFragment<IDevicesFgView, DevicesFgPrese
                 BroadcastReceiver() {
                     @Override
                     public void onReceive(Context context, Intent intent) {
-                        mPresenter.loadDeviceList();
+                        mPresenter.loadBraceletList();
                     }
                 });
     }
@@ -72,7 +73,7 @@ public class DevicesFragment extends BaseFragment<IDevicesFgView, DevicesFgPrese
 
     @Override
     public LQRRecyclerView getRvContacts() {
-        return mRvDevices;
+        return mRvBracelets;
     }
 
     @Override

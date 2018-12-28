@@ -21,7 +21,6 @@ import com.bracelet.sms.ui.presenter.view.IHomeAtView;
 import com.bracelet.sms.ui.utils.PopupWindowUtils;
 import com.bracelet.sms.ui.utils.ThemeUtils;
 import com.bracelet.sms.ui.utils.UIUtils;
-import com.bracelet.sms.ui.utils.ULog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,8 +34,8 @@ public class HomeActivity extends BaseActivity<IHomeAtView, HomeAtPresenter>
 
     @BindView(R.id.ibConversationAddMenu)
     ImageButton mIbConversationAddMenu;
-    @BindView(R.id.ibDevicesAddMenu)
-    ImageButton mIbDeviceAddMenu;
+    @BindView(R.id.ibBraceletsAddMenu)
+    ImageButton mIbBraceletAddMenu;
     @BindView(R.id.vpContent)
     ViewPager mVpContent;
 
@@ -54,20 +53,20 @@ public class HomeActivity extends BaseActivity<IHomeAtView, HomeAtPresenter>
     @BindView(R.id.tvConversationCount)
     public TextView mTvConversationCount;
 
-    @BindView(R.id.llDevice)
-    LinearLayout mLlDevice;
-    @BindView(R.id.tvDeviceNormal)
-    TextView mTvDeviceNormal;
-    @BindView(R.id.tvDevicePress)
-    TextView mTvDevicePress;
-    @BindView(R.id.tvDeviceTextNormal)
-    TextView mTvDeviceTextNormal;
-    @BindView(R.id.tvDeviceTextPress)
-    TextView mTvDeviceTextPress;
-    @BindView(R.id.tvDeviceCount)
-    public TextView mTvDeviceCount;
-    @BindView(R.id.tvDeviceRedDot)
-    public TextView mTvDeviceRedDot;
+    @BindView(R.id.llBracelet)
+    LinearLayout mLlBracelet;
+    @BindView(R.id.tvBraceletNormal)
+    TextView mTvBraceletNormal;
+    @BindView(R.id.tvBraceletPress)
+    TextView mTvBraceletPress;
+    @BindView(R.id.tvBraceletTextNormal)
+    TextView mTvBraceletTextNormal;
+    @BindView(R.id.tvBraceletTextPress)
+    TextView mTvBraceletTextPress;
+    @BindView(R.id.tvBraceletCount)
+    public TextView mTvBraceletCount;
+    @BindView(R.id.tvBraceletRedDot)
+    public TextView mTvBraceletRedDot;
 
     @BindView(R.id.llSetting)
     LinearLayout mLlSetting;
@@ -129,17 +128,17 @@ public class HomeActivity extends BaseActivity<IHomeAtView, HomeAtPresenter>
             });
 
             menuView.findViewById(R.id.tvAddDevice).setOnClickListener(v1 -> {
-                jumpToActivity(AddDeviceActivity.class);
+                jumpToActivity(AddBraceletActivity.class);
                 popupWindow.dismiss();
             });
         });
 
-        mIbDeviceAddMenu.setOnClickListener(v -> {
-            jumpToActivity(AddDeviceActivity.class);
+        mIbBraceletAddMenu.setOnClickListener(v -> {
+            jumpToActivity(AddBraceletActivity.class);
         });
 
         mLlConversation.setOnClickListener(this::bottomBtnClick);
-        mLlDevice.setOnClickListener(this::bottomBtnClick);
+        mLlBracelet.setOnClickListener(this::bottomBtnClick);
         mLlSetting.setOnClickListener(this::bottomBtnClick);
 
         //mVpContent.setOnPageChangeListener(this);
@@ -185,22 +184,22 @@ public class HomeActivity extends BaseActivity<IHomeAtView, HomeAtPresenter>
             case 0:
                 setToolbarTitle(UIUtils.getString(R.string.str_conversation));
                 mIbConversationAddMenu.setVisibility(View.VISIBLE);
-                mIbDeviceAddMenu.setVisibility(View.GONE);
+                mIbBraceletAddMenu.setVisibility(View.GONE);
                 break;
             case 1:
-                setToolbarTitle(UIUtils.getString(R.string.str_device_title));
+                setToolbarTitle(UIUtils.getString(R.string.str_bracelet_title));
                 mIbConversationAddMenu.setVisibility(View.GONE);
-                mIbDeviceAddMenu.setVisibility(View.VISIBLE);
+                mIbBraceletAddMenu.setVisibility(View.VISIBLE);
                 break;
             case 2:
                 setToolbarTitle(UIUtils.getString(R.string.str_setting));
                 mIbConversationAddMenu.setVisibility(View.GONE);
-                mIbDeviceAddMenu.setVisibility(View.GONE);
+                mIbBraceletAddMenu.setVisibility(View.GONE);
                 break;
             default:
                 setToolbarTitle(UIUtils.getString(R.string.app_name));
                 mIbConversationAddMenu.setVisibility(View.GONE);
-                mIbDeviceAddMenu.setVisibility(View.GONE);
+                mIbBraceletAddMenu.setVisibility(View.GONE);
                 break;
         }
     }
@@ -224,18 +223,18 @@ public class HomeActivity extends BaseActivity<IHomeAtView, HomeAtPresenter>
             case 0:
                 mTvConversationNormal.getBackground().setAlpha(diaphaneity_one);
                 mTvConversationPress.getBackground().setAlpha(diaphaneity_two);
-                mTvDeviceNormal.getBackground().setAlpha(diaphaneity_two);
-                mTvDevicePress.getBackground().setAlpha(diaphaneity_one);
+                mTvBraceletNormal.getBackground().setAlpha(diaphaneity_two);
+                mTvBraceletPress.getBackground().setAlpha(diaphaneity_one);
                 mTvConversationTextNormal.setTextColor(ThemeUtils.getNormalColor(diaphaneity_one));
                 mTvConversationTextPress.setTextColor(ThemeUtils.getPressColor(diaphaneity_two));
-                mTvDeviceTextNormal.setTextColor(ThemeUtils.getNormalColor(diaphaneity_two));
-                mTvDeviceTextPress.setTextColor(ThemeUtils.getPressColor(diaphaneity_one));
+                mTvBraceletTextNormal.setTextColor(ThemeUtils.getNormalColor(diaphaneity_two));
+                mTvBraceletTextPress.setTextColor(ThemeUtils.getPressColor(diaphaneity_one));
                 break;
             case 1:
-                mTvDeviceNormal.getBackground().setAlpha(diaphaneity_one);
-                mTvDevicePress.getBackground().setAlpha(diaphaneity_two);
-                mTvDeviceTextNormal.setTextColor(ThemeUtils.getNormalColor(diaphaneity_one));
-                mTvDeviceTextPress.setTextColor(ThemeUtils.getPressColor(diaphaneity_two));
+                mTvBraceletNormal.getBackground().setAlpha(diaphaneity_one);
+                mTvBraceletPress.getBackground().setAlpha(diaphaneity_two);
+                mTvBraceletTextNormal.setTextColor(ThemeUtils.getNormalColor(diaphaneity_one));
+                mTvBraceletTextPress.setTextColor(ThemeUtils.getPressColor(diaphaneity_two));
                 mTvSettingNormal.getBackground().setAlpha(diaphaneity_two);
                 mTvSettingPress.getBackground().setAlpha(diaphaneity_one);
                 mTvSettingTextNormal.setTextColor(ThemeUtils.getNormalColor(diaphaneity_two));
@@ -291,19 +290,19 @@ public class HomeActivity extends BaseActivity<IHomeAtView, HomeAtPresenter>
      */
     private void setTransparency() {
         mTvConversationNormal.getBackground().setAlpha(255);
-        mTvDeviceNormal.getBackground().setAlpha(255);
+        mTvBraceletNormal.getBackground().setAlpha(255);
         mTvSettingNormal.getBackground().setAlpha(255);
 
         mTvConversationPress.getBackground().setAlpha(1);
-        mTvDevicePress.getBackground().setAlpha(1);
+        mTvBraceletPress.getBackground().setAlpha(1);
         mTvSettingPress.getBackground().setAlpha(1);
 
         mTvConversationTextNormal.setTextColor(ThemeUtils.getNormalColor(255));
-        mTvDeviceTextNormal.setTextColor(ThemeUtils.getNormalColor(255));
+        mTvBraceletTextNormal.setTextColor(ThemeUtils.getNormalColor(255));
         mTvSettingTextNormal.setTextColor(ThemeUtils.getNormalColor(255));
 
         mTvConversationTextPress.setTextColor(ThemeUtils.getPressColor(0));
-        mTvDeviceTextPress.setTextColor(ThemeUtils.getPressColor(0));
+        mTvBraceletTextPress.setTextColor(ThemeUtils.getPressColor(0));
         mTvSettingTextPress.setTextColor(ThemeUtils.getPressColor(0));
     }
 
@@ -316,15 +315,15 @@ public class HomeActivity extends BaseActivity<IHomeAtView, HomeAtPresenter>
                 mTvConversationPress.getBackground().setAlpha(255);
                 mTvConversationTextPress.setTextColor(ThemeUtils.getPressColor(255));
                 mIbConversationAddMenu.setVisibility(View.VISIBLE);
-                mIbDeviceAddMenu.setVisibility(View.GONE);
+                mIbBraceletAddMenu.setVisibility(View.GONE);
                 break;
-            case R.id.llDevice:
-                setToolbarTitle(UIUtils.getString(R.string.str_device));
+            case R.id.llBracelet:
+                setToolbarTitle(UIUtils.getString(R.string.str_bracelet));
                 mVpContent.setCurrentItem(1, false);
-                mTvDevicePress.getBackground().setAlpha(255);
-                mTvDeviceTextPress.setTextColor(ThemeUtils.getPressColor(255));
+                mTvBraceletPress.getBackground().setAlpha(255);
+                mTvBraceletTextPress.setTextColor(ThemeUtils.getPressColor(255));
                 mIbConversationAddMenu.setVisibility(View.GONE);
-                mIbDeviceAddMenu.setVisibility(View.VISIBLE);
+                mIbBraceletAddMenu.setVisibility(View.VISIBLE);
                 break;
             case R.id.llSetting:
                 setToolbarTitle(UIUtils.getString(R.string.str_setting));
@@ -332,7 +331,7 @@ public class HomeActivity extends BaseActivity<IHomeAtView, HomeAtPresenter>
                 mTvSettingPress.getBackground().setAlpha(255);
                 mTvSettingTextPress.setTextColor(ThemeUtils.getPressColor(255));
                 mIbConversationAddMenu.setVisibility(View.GONE);
-                mIbDeviceAddMenu.setVisibility(View.GONE);
+                mIbBraceletAddMenu.setVisibility(View.GONE);
                 break;
         }
     }

@@ -69,10 +69,14 @@ dependencies {
     implementation 'com.bm.photoview:library:1.4.1'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'io.reactivex:rxandroid:1.2.1'
-    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation('com.squareup.retrofit2:converter-gson:2.2.0') {
         exclude group: 'com.google.code.gson'
     }
     implementation "com.daimajia.swipelayout:library:1.2.0@aar"
-    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    //swipelayout动画效果相关
+    implementation 'com.daimajia.easing:library:1.0.1@aar'
+    implementation 'com.daimajia.androidanimations:library:1.1.2@aar'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.5.0'
 }

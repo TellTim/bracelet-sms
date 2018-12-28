@@ -105,7 +105,7 @@
         </com.zhy.autolayout.AutoLinearLayout>
 
         <com.zhy.autolayout.AutoLinearLayout
-            android:id="@+id/llDevice"
+            android:id="@+id/llBracelet"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -127,7 +127,7 @@
                     android:layout_marginBottom="3dp">
 
                     <TextView
-                        android:id="@+id/tvDeviceNormal"
+                        android:id="@+id/tvBraceletNormal"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:background="@drawable/ic_devices_normal_24dp"
@@ -136,7 +136,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/tvDevicePress"
+                        android:id="@+id/tvBraceletPress"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:background="@drawable/ic_devices_pressed_24dp"
@@ -146,7 +146,7 @@
                 </com.zhy.autolayout.AutoRelativeLayout>
 
                 <TextView
-                    android:id="@+id/tvDeviceCount"
+                    android:id="@+id/tvBraceletCount"
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:layout_alignParentTop="true"
@@ -161,14 +161,14 @@
                     android:visibility="gone" />
 
                 <TextView
-                    android:id="@+id/tvDeviceRedDot"
+                    android:id="@+id/tvBraceletRedDot"
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="-8dp"
                     android:layout_marginTop="-3dp"
                     android:layout_toEndOf="@id/rlDevice"
-                    android:background="@mipmap/new_device_red_dot"
+                    android:background="@mipmap/new_bracelet_red_dot"
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:textSize="@dimen/navigation_tip_text_size"
@@ -182,18 +182,18 @@
                 android:layout_weight="3">
 
                 <TextView
-                    android:id="@+id/tvDeviceTextNormal"
+                    android:id="@+id/tvBraceletTextNormal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/str_device"
+                    android:text="@string/str_bracelet"
                     android:textColor="@color/text_normal_color"
                     android:textSize="@dimen/navigation_text_size" />
 
                 <TextView
-                    android:id="@+id/tvDeviceTextPress"
+                    android:id="@+id/tvBraceletTextPress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/str_device"
+                    android:text="@string/str_bracelet"
                     android:textColor="@color/text_pressed_color"
                     android:textSize="@dimen/navigation_text_size" />
             </com.zhy.autolayout.AutoRelativeLayout>

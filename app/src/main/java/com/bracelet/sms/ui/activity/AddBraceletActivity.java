@@ -5,17 +5,17 @@ import android.widget.Button;
 
 import com.bracelet.sms.R;
 import com.bracelet.sms.ui.base.BaseActivity;
-import com.bracelet.sms.ui.presenter.AddDeviceAtPresenter;
-import com.bracelet.sms.ui.presenter.view.IAddDeviceAtView;
+import com.bracelet.sms.ui.presenter.AddBraceletAtPresenter;
+import com.bracelet.sms.ui.presenter.view.IAddBraceletAtView;
 import com.bracelet.sms.ui.utils.UIUtils;
-import com.bracelet.sms.utils.RegularUtils;
 
 import butterknife.BindView;
 
 /**
  * Created by Tim.WJ on 2018/12/23.
  */
-public class AddDeviceActivity extends BaseActivity<IAddDeviceAtView, AddDeviceAtPresenter> implements IAddDeviceAtView {
+public class AddBraceletActivity extends BaseActivity<IAddBraceletAtView, AddBraceletAtPresenter> implements
+    IAddBraceletAtView {
 
     @BindView(R.id.et_nickname)
     TextInputEditText mNickName;
@@ -32,7 +32,7 @@ public class AddDeviceActivity extends BaseActivity<IAddDeviceAtView, AddDeviceA
     @Override
     protected void initView() {
         super.initView();
-        setToolbarTitle(UIUtils.getString(R.string.str_add_device));
+        setToolbarTitle(UIUtils.getString(R.string.str_add_bracelet));
     }
 
     @Override
@@ -52,13 +52,13 @@ public class AddDeviceActivity extends BaseActivity<IAddDeviceAtView, AddDeviceA
     }
 
     @Override
-    protected AddDeviceAtPresenter createPresenter() {
-        return new AddDeviceAtPresenter(this);
+    protected AddBraceletAtPresenter createPresenter() {
+        return new AddBraceletAtPresenter(this);
     }
 
     @Override
     protected int provideContentViewId() {
-        return R.layout.activity_add_device;
+        return R.layout.activity_add_bracelet;
     }
 
     @Override

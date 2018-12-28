@@ -9,7 +9,7 @@ import com.bracelet.sms.db.model.Bracelet;
 import com.bracelet.sms.ui.activity.ConversationActivity;
 import com.bracelet.sms.ui.base.BaseActivity;
 import com.bracelet.sms.ui.base.BasePresenter;
-import com.bracelet.sms.ui.presenter.view.IDevicesFgView;
+import com.bracelet.sms.ui.presenter.view.IBraceletsFgView;
 import com.bracelet.sms.ui.utils.UIUtils;
 import com.bracelet.sms.ui.utils.ULog;
 import com.lqr.adapter.LQRAdapterForRecyclerView;
@@ -23,19 +23,19 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class DevicesFgPresenter extends BasePresenter<IDevicesFgView> {
+public class BraceletsFgPresenter extends BasePresenter<IBraceletsFgView> {
 
-    private static final String TAG = "DevicesFgPresenter";
+    private static final String TAG = "BraceletsFgPresenter";
     private List<Bracelet> mData = new ArrayList<>();
     private LQRHeaderAndFooterAdapter mAdapter;
     private static int deviceListColors[] = {R.color.device_color_1, R.color.device_color_2,
             R.color.device_color_3, R.color.device_color_4, R.color.device_color_5};
 
-    public DevicesFgPresenter(BaseActivity context) {
+    public BraceletsFgPresenter(BaseActivity context) {
         super(context);
     }
 
-    public void loadDeviceList() {
+    public void loadBraceletList() {
         setAdapter();
         loadData();
     }
@@ -65,10 +65,10 @@ public class DevicesFgPresenter extends BasePresenter<IDevicesFgView> {
     private void setAdapter() {
         if (mAdapter == null) {
             LQRAdapterForRecyclerView adapter
-                    = new LQRAdapterForRecyclerView<Bracelet>(mContext, mData, R.layout.item_device) {
+                    = new LQRAdapterForRecyclerView<Bracelet>(mContext, mData, R.layout.item_bracelet) {
                 @Override
                 public void convert(LQRViewHolderForRecyclerView helper, Bracelet item, int position) {
-                    helper.setText(R.id.tv_device_name, item.getNikeName());
+                    helper.setText(R.id.tv_bracelet_name, item.getNikeName());
                     CardView cardView = helper.getConvertView().findViewById(R.id.item_container);
                     cardView.setCardBackgroundColor(mContext.getColor(deviceListColors[position % 5]));
                 }

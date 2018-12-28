@@ -25,7 +25,7 @@ public class FragmentFactory {
     }
 
     private ConversationFragment mConversationFragment;
-    private DevicesFragment mDevicesFragment;
+    private BraceletsFragment mBraceletsFragment;
     private SettingFragment mSettingFragment;
 
     public ConversationFragment getConversationFragment() {
@@ -39,15 +39,15 @@ public class FragmentFactory {
         return mConversationFragment;
     }
 
-    public DevicesFragment getDevicesFragment() {
-        if (mDevicesFragment == null) {
+    public BraceletsFragment getDevicesFragment() {
+        if (mBraceletsFragment == null) {
             synchronized (FragmentFactory.class) {
-                if (mDevicesFragment == null) {
-                    mDevicesFragment = new DevicesFragment();
+                if (mBraceletsFragment == null) {
+                    mBraceletsFragment = new BraceletsFragment();
                 }
             }
         }
-        return mDevicesFragment;
+        return mBraceletsFragment;
     }
 
     public SettingFragment getSettingFragment() {

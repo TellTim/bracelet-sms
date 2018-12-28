@@ -2,13 +2,15 @@
     <string name="app_name">BraceletSMS</string>
     <string name="str_send">Send</string>
     <string name="str_cancel">Cancel</string>
-    <string name="str_device">Bracelet</string>
+    <string name="str_bracelet">Bracelet</string>
     <string name="str_conversation">Conversation</string>
     <string name="str_setting">Setting</string>
-    <string name="str_add_device">Add Device</string>
+    <string name="str_add_bracelet">Add Bracelet</string>
     <string name="str_add_conversation">Add Conversation</string>
-    <string name="str_device_title">Your Bracelet</string>
+    <string name="str_bracelet_title">Your Bracelet</string>
     <string name="parameter_error">Parameter Error</string>
     <string name="binding_success">Binding success</string>
     <string name="count_of_bracelets">%1$d bracelets</string>
+    <string name="str_index">%1$d.</string>
+    <string name="str_send_ask">Send Item?</string>
 </resources>

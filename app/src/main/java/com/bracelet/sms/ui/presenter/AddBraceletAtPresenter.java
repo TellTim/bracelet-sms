@@ -9,15 +9,13 @@ import com.bracelet.sms.db.DBManager;
 import com.bracelet.sms.db.model.Bracelet;
 import com.bracelet.sms.ui.base.BaseActivity;
 import com.bracelet.sms.ui.base.BasePresenter;
-import com.bracelet.sms.ui.presenter.view.IAddDeviceAtView;
+import com.bracelet.sms.ui.presenter.view.IAddBraceletAtView;
 import com.bracelet.sms.ui.utils.UIUtils;
-import com.bracelet.sms.ui.utils.ULog;
-import com.bracelet.sms.utils.RegularUtils;
 
-public class AddDeviceAtPresenter extends BasePresenter<IAddDeviceAtView> {
+public class AddBraceletAtPresenter extends BasePresenter<IAddBraceletAtView> {
     private static final String TAG = "HomeAtPresenter";
 
-    public AddDeviceAtPresenter(BaseActivity context) {
+    public AddBraceletAtPresenter(BaseActivity context) {
         super(context);
     }
 

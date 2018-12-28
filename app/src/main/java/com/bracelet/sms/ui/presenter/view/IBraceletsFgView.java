@@ -4,7 +4,7 @@ import android.widget.TextView;
 
 import com.lqr.recyclerview.LQRRecyclerView;
 
-public interface IDevicesFgView {
+public interface IBraceletsFgView {
 
     LQRRecyclerView getRvContacts();
 
