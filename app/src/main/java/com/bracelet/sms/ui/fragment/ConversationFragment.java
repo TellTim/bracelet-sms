@@ -4,9 +4,7 @@ import com.bracelet.sms.R;
 import com.bracelet.sms.ui.activity.HomeActivity;
 import com.bracelet.sms.ui.base.BaseFragment;
 import com.bracelet.sms.ui.presenter.ConversationFgPresenter;
-import com.bracelet.sms.ui.presenter.SettingFgPresenter;
 import com.bracelet.sms.ui.presenter.view.IConversationFgView;
-import com.bracelet.sms.ui.presenter.view.ISettingFgView;
 
 public class ConversationFragment extends BaseFragment<IConversationFgView, ConversationFgPresenter> implements IConversationFgView {
     @Override
@@ -16,6 +14,6 @@ public class ConversationFragment extends BaseFragment<IConversationFgView, Conv
 
     @Override
     protected int provideContentViewId() {
-        return R.layout.fragment_conversation;
+        return R.layout.fragment_conversations;
     }
 }
