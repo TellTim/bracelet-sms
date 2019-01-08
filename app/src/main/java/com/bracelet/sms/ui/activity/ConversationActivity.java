@@ -6,8 +6,8 @@ import android.support.v7.widget.GridLayoutManager;
 
 import com.bracelet.sms.R;
 import com.bracelet.sms.ui.adapter.RecyclerSwipeViewAdapter;
-import com.bracelet.sms.ui.base.BaseActivity;
-import com.bracelet.sms.ui.base.BasePresenter;
+import com.bracelet.sms.base.BaseActivity;
+import com.bracelet.sms.base.BasePresenter;
 import com.lqr.recyclerview.LQRRecyclerView;
 
 import java.util.ArrayList;

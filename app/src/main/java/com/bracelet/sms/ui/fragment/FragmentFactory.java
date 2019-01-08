@@ -1,5 +1,7 @@
 package com.bracelet.sms.ui.fragment;
 
+import com.bracelet.sms.bracelet.view.BraceletsFragment;
+
 /**
  * @Package : com.hunter.im.ui.fragment
  * @Auther : tellt

@@ -1,8 +1,8 @@
 package com.bracelet.sms.ui.fragment;
 
 import com.bracelet.sms.R;
-import com.bracelet.sms.ui.activity.HomeActivity;
-import com.bracelet.sms.ui.base.BaseFragment;
+import com.bracelet.sms.home.HomeActivity;
+import com.bracelet.sms.base.BaseFragment;
 import com.bracelet.sms.ui.presenter.ConversationFgPresenter;
 import com.bracelet.sms.ui.presenter.view.IConversationFgView;
 

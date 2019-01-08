@@ -1,6 +1,6 @@
 package com.bracelet.sms.app;
 
-import com.bracelet.sms.app.base.BaseApp;
+import com.bracelet.sms.base.BaseApp;
 import com.bracelet.sms.utils.SystemUtils;
 import com.bracelet.sms.vendor.litePal.LitePalClient;
 

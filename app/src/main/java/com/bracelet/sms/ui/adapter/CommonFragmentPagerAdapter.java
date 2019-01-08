@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.bracelet.sms.ui.base.BaseFragment;
+import com.bracelet.sms.base.BaseFragment;
 
 import java.util.List;
 
