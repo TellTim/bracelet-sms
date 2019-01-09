@@ -1,15 +1,17 @@
-package com.bracelet.sms.ui.fragment;
+package com.bracelet.sms.conversation.view;
 
 import com.bracelet.sms.R;
-import com.bracelet.sms.home.HomeActivity;
 import com.bracelet.sms.base.BaseFragment;
-import com.bracelet.sms.ui.presenter.ConversationFgPresenter;
-import com.bracelet.sms.ui.presenter.view.IConversationFgView;
+import com.bracelet.sms.conversation.presenter.ConversationFgPresenter;
+import com.bracelet.sms.conversation.view.IConversationFgView;
 
+/**
+ * @author tell.tim
+ */
 public class ConversationFragment extends BaseFragment<IConversationFgView, ConversationFgPresenter> implements IConversationFgView {
     @Override
     protected ConversationFgPresenter createPresenter() {
-        return new ConversationFgPresenter((HomeActivity) getActivity());
+        return new ConversationFgPresenter();
     }
 
     @Override

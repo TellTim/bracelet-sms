@@ -1,6 +1,8 @@
-package com.bracelet.sms.ui.fragment;
+package com.bracelet.sms.home;
 
 import com.bracelet.sms.bracelet.view.BraceletsFragment;
+import com.bracelet.sms.conversation.view.ConversationFragment;
+import com.bracelet.sms.setting.view.SettingFragment;
 
 /**
  * @Package : com.hunter.im.ui.fragment

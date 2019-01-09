@@ -1,8 +1,15 @@
 package com.bracelet.sms.bracelet.model;
 
 import android.support.annotation.NonNull;
+
+import com.bracelet.sms.app.constant.StatusConst;
 import com.bracelet.sms.app.manager.AppExecutors;
 import com.bracelet.sms.base.IBaseCallback;
+
+import org.litepal.FluentQuery;
+import org.litepal.Operator;
+
+import java.util.List;
 
 /**
  * @program: bracelet-sms
@@ -18,13 +25,23 @@ public class BraceletModel implements IBraceletModel {
     public void insertBracelet(@NonNull BraceletBean braceletBean) {
         if (braceletBean!=null){
             AppExecutors.getDiskIOPool().execute(
-                    () -> braceletBean.saveOrUpdate("telephone",braceletBean.getTelephone()));
+                    () -> braceletBean.saveOrUpdate("telephone = ?",braceletBean.getTelephone()));
         }
     }
 
     @Override
-    public void queryAllBracelets(@NonNull IBaseCallback baseCallback) {
-
+    public void queryAllBracelets(@NonNull IBaseCallback<List<BraceletBean>> baseCallback) {
+        Runnable runnable = () -> {
+            final List<BraceletBean> modelBeanList = Operator.findAll(BraceletBean.class);
+            AppExecutors.getMainThread().execute(() -> {
+                if (modelBeanList == null) {
+                    baseCallback.onFailure(StatusConst.EMPTY_RESULT);
+                } else {
+                    baseCallback.onSuccess(modelBeanList);
+                }
+            });
+        };
+        AppExecutors.getDiskIOPool().execute(runnable);
     }
 
     @Override

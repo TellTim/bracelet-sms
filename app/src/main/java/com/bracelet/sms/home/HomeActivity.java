@@ -14,8 +14,6 @@ import com.bracelet.sms.base.BaseActivity;
 import com.bracelet.sms.base.BaseFragment;
 import com.bracelet.sms.base.BasePresenter;
 import com.bracelet.sms.bracelet.view.AddBraceletActivity;
-import com.bracelet.sms.ui.adapter.CommonFragmentPagerAdapter;
-import com.bracelet.sms.ui.fragment.FragmentFactory;
 import com.bracelet.sms.utils.PopupWindowUtils;
 import com.bracelet.sms.utils.ThemeUtils;
 import com.bracelet.sms.utils.UIUtils;

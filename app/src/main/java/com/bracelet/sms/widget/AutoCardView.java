@@ -1,4 +1,4 @@
-package com.bracelet.sms.ui.widget;
+package com.bracelet.sms.widget;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;

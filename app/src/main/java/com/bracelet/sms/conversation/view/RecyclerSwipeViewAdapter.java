@@ -1,4 +1,4 @@
-package com.bracelet.sms.ui.adapter;
+package com.bracelet.sms.conversation.view;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

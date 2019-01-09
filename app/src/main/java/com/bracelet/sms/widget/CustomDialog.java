@@ -1,4 +1,4 @@
-package com.bracelet.sms.ui.widget;
+package com.bracelet.sms.widget;
 
 import android.app.Dialog;
 import android.content.Context;

@@ -13,5 +13,6 @@
     <string name="binding_success">绑定成功!</string>
     <string name="count_of_bracelets">您已绑定%1$d 个手环</string>
     <string name="str_index">%1$d.</string>
-  <string name="str_send_ask">确定发送么?</string>
+    <string name="str_send_ask">确定发送么?</string>
+    <string name="str_empty">无结果</string>
 </resources>

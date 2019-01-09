@@ -5,6 +5,8 @@ import android.support.design.widget.TextInputEditText;
 import android.widget.Button;
 import butterknife.BindView;
 import com.bracelet.sms.R;
+import com.bracelet.sms.app.action.AppAction;
+import com.bracelet.sms.app.manager.BroadcastManager;
 import com.bracelet.sms.base.BaseActivity;
 import com.bracelet.sms.bracelet.presenter.AddBraceletPresenter;
 import com.bracelet.sms.utils.UIUtils;
@@ -65,6 +67,7 @@ public class AddBraceletActivity extends BaseActivity<IAddBraceletView, AddBrace
     @Override
     public void showAddSuccessAndJumpBack() {
         showToast(UIUtils.getString(R.string.binding_success));
+        BroadcastManager.getInstance(this).sendBroadcast(AppAction.UPDATE_BRACELET_LIST);
         this.finish();
     }
 }

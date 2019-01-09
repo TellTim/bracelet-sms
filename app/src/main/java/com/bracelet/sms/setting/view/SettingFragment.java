@@ -1,15 +1,13 @@
-package com.bracelet.sms.ui.fragment;
+package com.bracelet.sms.setting.view;
 
 import com.bracelet.sms.R;
-import com.bracelet.sms.home.HomeActivity;
 import com.bracelet.sms.base.BaseFragment;
-import com.bracelet.sms.ui.presenter.SettingFgPresenter;
-import com.bracelet.sms.ui.presenter.view.ISettingFgView;
+import com.bracelet.sms.setting.presenter.SettingFgPresenter;
 
 public class SettingFragment extends BaseFragment<ISettingFgView, SettingFgPresenter> implements ISettingFgView {
     @Override
     protected SettingFgPresenter createPresenter() {
-        return new SettingFgPresenter((HomeActivity) getActivity());
+        return new SettingFgPresenter();
     }
 
     @Override

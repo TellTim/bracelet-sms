@@ -8,6 +8,9 @@ import com.bracelet.sms.bracelet.model.IBraceletModel;
 import com.bracelet.sms.base.BasePresenter;
 import com.bracelet.sms.bracelet.view.IAddBraceletView;
 
+/**
+ * @author tell.tim
+ */
 public class AddBraceletPresenter extends BasePresenter<IAddBraceletView> implements IAddBraceletPresenter{
     private static final String TAG = "HomeAtPresenter";
 
@@ -20,7 +23,7 @@ public class AddBraceletPresenter extends BasePresenter<IAddBraceletView> implem
     @Override
     public void bindingBracelet(String telephone, String nickname) {
         if(!TextUtils.isEmpty(telephone)&&!TextUtils.isEmpty(nickname)) {
-            BraceletBean braceletBean = new BraceletBean(telephone, nickname);
+            BraceletBean braceletBean = new BraceletBean( nickname,telephone,true);
             braceletModel.insertBracelet(braceletBean);
             getView().showAddSuccessAndJumpBack();
         }

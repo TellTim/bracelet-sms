@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 
 import com.bracelet.sms.R;
 import com.bracelet.sms.app.MainApp;
-import com.bracelet.sms.ui.widget.CustomDialog;
+import com.bracelet.sms.widget.CustomDialog;
 import com.zhy.autolayout.AutoLinearLayout;
 
 import me.drakeet.materialdialog.MaterialDialog;

@@ -13,4 +13,5 @@
     <string name="count_of_bracelets">%1$d bracelets</string>
     <string name="str_index">%1$d.</string>
     <string name="str_send_ask">Send Item?</string>
+    <string name="str_empty">Empty</string>
 </resources>

@@ -1,18 +1,25 @@
 package com.bracelet.sms.base;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.bracelet.sms.R;
+import com.bracelet.sms.widget.CustomDialog;
+import com.bracelet.sms.utils.UIUtils;
 
 import butterknife.ButterKnife;
 
-public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragment {
+public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragment implements IBaseView {
 
     protected T mPresenter;
-
+    private CustomDialog mDialogWaiting;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,4 +87,49 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
 
     //得到当前界面的布局文件id(由子类实现)
     protected abstract int provideContentViewId();
+
+    /**
+     * 显示等待提示框
+     */
+    @Override
+    public Dialog showWaitingDialog(String tip) {
+        hideWaitingDialog();
+        View view = View.inflate(getContext(), R.layout.layout_dialog_waiting, null);
+        if (!TextUtils.isEmpty(tip)) {
+            ((TextView) view.findViewById(R.id.tvTip)).setText(tip);
+        }
+        mDialogWaiting = new CustomDialog(getContext(), view, R.style.CustomDialog);
+        mDialogWaiting.show();
+        mDialogWaiting.setCancelable(false);
+        return mDialogWaiting;
+    }
+
+    /**
+     * 隐藏等待提示框
+     */
+    @Override
+    public void hideWaitingDialog() {
+        if (mDialogWaiting != null) {
+            mDialogWaiting.dismiss();
+            mDialogWaiting = null;
+        }
+    }
+
+    /**
+     * 显示提示
+     *
+     * @param msg String
+     */
+    @Override
+    public void showToast(String msg) {
+        UIUtils.showToast(msg);
+    }
+
+    /**
+     * 显示请求错误提示
+     */
+    @Override
+    public void showErr(int errorCode) {
+
+    }
 }

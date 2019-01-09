@@ -1,11 +1,10 @@
-package com.bracelet.sms.ui.activity;
+package com.bracelet.sms.conversation.view;
 
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 
 import com.bracelet.sms.R;
-import com.bracelet.sms.ui.adapter.RecyclerSwipeViewAdapter;
 import com.bracelet.sms.base.BaseActivity;
 import com.bracelet.sms.base.BasePresenter;
 import com.lqr.recyclerview.LQRRecyclerView;

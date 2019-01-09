@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".bracelet.view.AddBraceletActivity" />
-        <activity android:name=".ui.activity.ConversationActivity" />
+        <activity android:name=".conversation.view.ConversationActivity" />
     </application>
 
 </manifest>

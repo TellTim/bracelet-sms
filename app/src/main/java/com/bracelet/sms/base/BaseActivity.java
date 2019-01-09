@@ -20,12 +20,15 @@ import butterknife.ButterKnife;
 
 import com.bracelet.sms.R;
 import com.bracelet.sms.app.MainApp;
-import com.bracelet.sms.ui.widget.CustomDialog;
+import com.bracelet.sms.widget.CustomDialog;
 import com.bracelet.sms.utils.UIUtils;
 import com.zhy.autolayout.AutoLinearLayout;
 
 import me.drakeet.materialdialog.MaterialDialog;
 
+/**
+ * @author tell.tim
+ */
 public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCompatActivity implements IBaseView{
 
     private static final String TAG = "BaseActivity";
