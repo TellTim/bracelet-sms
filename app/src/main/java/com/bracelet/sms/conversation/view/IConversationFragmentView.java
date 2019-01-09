@@ -1,4 +1,4 @@
 package com.bracelet.sms.conversation.view;
 
-public interface IConversationFgView {
+public interface IConversationFragmentView {
 }

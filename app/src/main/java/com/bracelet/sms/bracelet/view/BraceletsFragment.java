@@ -16,6 +16,7 @@ import com.bracelet.sms.base.BaseFragment;
 import com.bracelet.sms.bracelet.model.BraceletBean;
 import com.bracelet.sms.bracelet.presenter.BraceletsFragmentPresenter;
 import com.bracelet.sms.conversation.view.ConversationActivity;
+import com.bracelet.sms.home.HomeActivity;
 import com.bracelet.sms.utils.UIUtils;
 import com.lqr.adapter.LQRAdapterForRecyclerView;
 import com.lqr.adapter.LQRHeaderAndFooterAdapter;
@@ -81,7 +82,7 @@ public class BraceletsFragment extends BaseFragment<IBraceletsFragmentView, Brac
                     Intent intent = new Intent(getContext(), ConversationActivity.class);
                     intent.putExtra("name", mData.get(i).getNikeName());
                     intent.putExtra("telephone", mData.get(i).getTelephone());
-                    //getContext().jumpToActivity(intent);
+                    ((HomeActivity)getContext()).jumpToActivity(intent);
                     UIUtils.showToast("点击了第" + i + "个控件" + " name is " + mData.get(i).getNikeName() + " 号码是" +
                             mData.get(i).getTelephone());
                 });

@@ -5,12 +5,6 @@ import java.lang.ref.WeakReference;
 
 public class BaseFragmentPresenter<V> {
 
-    public BaseFragmentActivity mContext;
-
-    public BaseFragmentPresenter(BaseFragmentActivity context) {
-        mContext = context;
-    }
-
     protected Reference<V> mViewRef;
 
     public void attachView(V view) {

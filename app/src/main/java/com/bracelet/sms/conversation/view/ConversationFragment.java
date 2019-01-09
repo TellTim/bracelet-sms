@@ -2,16 +2,15 @@ package com.bracelet.sms.conversation.view;
 
 import com.bracelet.sms.R;
 import com.bracelet.sms.base.BaseFragment;
-import com.bracelet.sms.conversation.presenter.ConversationFgPresenter;
-import com.bracelet.sms.conversation.view.IConversationFgView;
+import com.bracelet.sms.conversation.presenter.ConversationFragmentPresenter;
 
 /**
  * @author tell.tim
  */
-public class ConversationFragment extends BaseFragment<IConversationFgView, ConversationFgPresenter> implements IConversationFgView {
+public class ConversationFragment extends BaseFragment<IConversationFragmentView, ConversationFragmentPresenter> implements IConversationFragmentView {
     @Override
-    protected ConversationFgPresenter createPresenter() {
-        return new ConversationFgPresenter();
+    protected ConversationFragmentPresenter createPresenter() {
+        return new ConversationFragmentPresenter();
     }
 
     @Override

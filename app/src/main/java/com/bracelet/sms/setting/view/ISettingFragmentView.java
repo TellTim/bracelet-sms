@@ -1,4 +1,4 @@
 package com.bracelet.sms.setting.view;
 
-public interface ISettingFgView {
+public interface ISettingFragmentView {
 }
