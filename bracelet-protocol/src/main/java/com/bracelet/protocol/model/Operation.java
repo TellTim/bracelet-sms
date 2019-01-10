@@ -9,7 +9,7 @@ public class Operation{
     private long responseTimestamp;
     private String content;
 
-    private Operation() {
+    public Operation() {
     }
 
     public Operation(int index, int parentIndex, long responseTimestamp, String content) {

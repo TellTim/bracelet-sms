@@ -4,12 +4,16 @@ import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 
+import com.bracelet.protocol.model.Operation;
 import com.bracelet.sms.R;
 import com.bracelet.sms.base.BaseActivity;
 import com.bracelet.sms.base.BasePresenter;
+import com.bracelet.sms.conversation.model.OperationModel;
+import com.bracelet.sms.utils.ULog;
 import com.lqr.recyclerview.LQRRecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 
@@ -53,11 +57,15 @@ public class ConversationActivity extends BaseActivity {
     protected void initData() {
         super.initData();
 
+        List<Operation> operationList = OperationModel.getOperations();
+
         if (cmdList == null) {
             cmdList = new ArrayList<>();
         }
-        for (int i = 0; i < 6; i++) {
-            cmdList.add(braceletTelephne);
+        ULog.d("Amee",operationList.size()+" xxxxx");
+        for (int i = 0; i < operationList.size(); i++) {
+            ULog.d("Amee",operationList.get(i).getContent()+" asdfasf ");
+            cmdList.add(operationList.get(i).getContent());
         }
 
     }
