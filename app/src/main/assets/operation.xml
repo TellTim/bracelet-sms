@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <operations>
-    <operation index="1">
-        <parentIndex>1</parentIndex>
+    <operation index="0">
+        <parentIndex>0</parentIndex>
         <responseTimestamp>60</responseTimestamp>
         <content>register</content>
     </operation>
-    <operation index="2">
-        <parentIndex>1</parentIndex>
+    <operation index="1">
+        <parentIndex>0</parentIndex>
         <responseTimestamp>60</responseTimestamp>
         <content>unregister</content>
     </operation>
-    <operation index="3">
-        <parentIndex>1</parentIndex>
+    <operation index="2">
+        <parentIndex>0</parentIndex>
         <responseTimestamp>60</responseTimestamp>
         <content>sos</content>
     </operation>
-    <operation index="4">
-        <parentIndex>3</parentIndex>
+    <operation index="3">
+        <parentIndex>2</parentIndex>
         <responseTimestamp>60</responseTimestamp>
         <content>desos</content>
     </operation>

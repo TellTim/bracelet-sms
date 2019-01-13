@@ -1,6 +1,7 @@
 package com.bracelet.sms.app;
 
 import com.bracelet.sms.base.BaseApp;
+import com.bracelet.sms.conversation.model.OperationModel;
 import com.bracelet.sms.utils.SystemUtils;
 import com.bracelet.sms.vendor.litePal.LitePalClient;
 
@@ -13,7 +14,7 @@ public class MainApp extends BaseApp {
                 SystemUtils.getCurProcessName(getApplicationContext()))) {
 
             LitePalClient.getInstance().plugin(this);
-
+            OperationModel.getInstance().initData();
         }
     }
 }

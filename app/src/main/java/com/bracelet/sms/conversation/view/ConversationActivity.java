@@ -1,6 +1,7 @@
 package com.bracelet.sms.conversation.view;
 
 import android.content.Intent;
+import android.graphics.Path;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 
@@ -8,8 +9,8 @@ import com.bracelet.protocol.model.Operation;
 import com.bracelet.sms.R;
 import com.bracelet.sms.base.BaseActivity;
 import com.bracelet.sms.base.BasePresenter;
+import com.bracelet.sms.base.IBaseCallback;
 import com.bracelet.sms.conversation.model.OperationModel;
-import com.bracelet.sms.utils.ULog;
 import com.lqr.recyclerview.LQRRecyclerView;
 
 import java.util.ArrayList;
@@ -57,17 +58,39 @@ public class ConversationActivity extends BaseActivity {
     protected void initData() {
         super.initData();
 
-        List<Operation> operationList = OperationModel.getOperations();
-
         if (cmdList == null) {
             cmdList = new ArrayList<>();
         }
-        ULog.d("Amee",operationList.size()+" xxxxx");
-        for (int i = 0; i < operationList.size(); i++) {
-            ULog.d("Amee",operationList.get(i).getContent()+" asdfasf ");
-            cmdList.add(operationList.get(i).getContent());
-        }
 
+        if (OperationModel.getInstance().getOperationContent().size() == 0) {
+            OperationModel.getInstance().reQueryAllOperation(new IBaseCallback<List<Operation>>() {
+                @Override
+                public void onSuccess(List<Operation> data) {
+                    for (int i = 0;i<data.size();i++){
+                        cmdList.add(data.get(i).getContent());
+                    }
+                }
+
+                @Override
+                public void onFailure(int failureCode) {
+                    // TODO
+                }
+
+                @Override
+                public void onError(int errorCode) {
+                    // TODO
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
+        } else {
+            for (int i = 0; i < OperationModel.getInstance().getOperationContent().size(); i++) {
+                cmdList.add(OperationModel.getInstance().getOperationContent().get(i));
+            }
+        }
     }
 
     @Override
